@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://c7pwbxhd4ei4j"]
+
+[ext_resource type="Script" uid="uid://d1rpywmfh1g6n" path="res://scripts/player.gd" id="1_ojs4q"]
+[ext_resource type="Texture2D" uid="uid://bipvxameqj75g" path="res://assets/sprites/misc/shadow.png" id="2_dv4ir"]
+[ext_resource type="SpriteFrames" uid="uid://c1gidadnqpbu3" path="res://assets/sprites/Player/anim/player_anim.tres" id="3_lw5ub"]
+[ext_resource type="Script" uid="uid://dqfbh2cr0vi7y" path="res://entities/CameraController.gd" id="4_dv4ir"]
+[ext_resource type="PackedScene" uid="uid://nvl4kaeqtfy3" path="res://scenes/ui/pausemenu.tscn" id="4_ks8m5"]
+[ext_resource type="PackedScene" uid="uid://ub66l03jvyhu" path="res://scenes/ui/dialog.tscn" id="5_l1ths"]
+[ext_resource type="Texture2D" uid="uid://b8lhg0nk8vajw" path="res://assets/textures/2d_lights_and_shadows_neutral_point_light.webp" id="6_25mxy"]
+[ext_resource type="AudioStream" uid="uid://cr6owtavaenks" path="res://assets/sounds/propios/footsteps.wav" id="7_25mxy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_25mxy"]
+radius = 18.84
+
+[node name="Player" type="CharacterBody2D" unique_id=2023377849]
+motion_mode = 1
+script = ExtResource("1_ojs4q")
+speed = 250
+
+[node name="Shade" type="Sprite2D" parent="." unique_id=1022624133]
+modulate = Color(1, 1, 1, 0.3529412)
+scale = Vector2(0.295, 0.18)
+texture = ExtResource("2_dv4ir")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1490515599]
+scale = Vector2(1, 0.665)
+shape = SubResource("CircleShape2D_25mxy")
+debug_color = Color(0.7161154, 0.4817065, 0.07499688, 0.41960785)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=710220709]
+process_mode = 3
+
+[node name="PauseMenu" parent="CanvasLayer" unique_id=846825393 instance=ExtResource("4_ks8m5")]
+visible = false
+
+[node name="Dialog" parent="CanvasLayer" unique_id=675230336 instance=ExtResource("5_l1ths")]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=677659953]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=108096528]
+process_mode = 3
+ignore_rotation = false
+limit_enabled = false
+limit_left = -1000
+limit_top = -1000
+limit_right = 1000
+limit_bottom = 1000
+limit_smoothed = true
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.1
+drag_top_margin = 0.1
+drag_right_margin = 0.1
+drag_bottom_margin = 0.1
+script = ExtResource("4_dv4ir")
+
+[node name="Light" type="PointLight2D" parent="." unique_id=1723150304]
+energy = 0.41
+texture = ExtResource("6_25mxy")
+texture_scale = 2.04
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=700397043]
+sprite_frames = ExtResource("3_lw5ub")
+animation = &"idle"
+offset = Vector2(5.915, 0)
+
+[node name="Interact" type="RayCast2D" parent="." unique_id=308044278]
+
+[node name="Footsteps" type="AudioStreamPlayer2D" parent="." unique_id=1606432842]
+stream = ExtResource("7_25mxy")

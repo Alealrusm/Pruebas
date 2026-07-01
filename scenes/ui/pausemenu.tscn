@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://nvl4kaeqtfy3"]
+
+[ext_resource type="Theme" uid="uid://bxg35mkwqvk02" path="res://assets/themes/MenuTheme.tres" id="1_r33we"]
+[ext_resource type="Script" uid="uid://gqekrny6rkbe" path="res://scripts/UI/pausemenu.gd" id="2_r33we"]
+[ext_resource type="Texture2D" uid="uid://c5ixel2eypxkw" path="res://assets/sprites/UI/box.png" id="3_i6c16"]
+[ext_resource type="PackedScene" uid="uid://c6joufqloq6ae" path="res://scenes/ui/sounds.tscn" id="4_ngfcr"]
+
+[node name="PauseMenu" type="Control" unique_id=846825393]
+process_mode = 2
+top_level = true
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_r33we")
+script = ExtResource("2_r33we")
+
+[node name="Sounds" parent="." unique_id=1762840408 instance=ExtResource("4_ngfcr")]
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=279706208]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Scale" type="Control" parent="CenterContainer" unique_id=290253235]
+layout_mode = 2
+
+[node name="BG" type="Sprite2D" parent="CenterContainer/Scale" unique_id=302185575]
+position = Vector2(3, 31)
+scale = Vector2(2, 2.4375)
+texture = ExtResource("3_i6c16")
+
+[node name="Buttons" type="VBoxContainer" parent="CenterContainer/Scale" unique_id=1329952910]
+layout_mode = 0
+offset_left = -95.0
+offset_top = -114.0
+offset_right = 96.0
+offset_bottom = 171.0
+size_flags_horizontal = 4
+theme = ExtResource("1_r33we")
+
+[node name="continue_btn" type="Button" parent="CenterContainer/Scale/Buttons" unique_id=847394957]
+layout_mode = 2
+text = "Continuar"
+flat = true
+
+[node name="inv_btn" type="Button" parent="CenterContainer/Scale/Buttons" unique_id=1594015449]
+layout_mode = 2
+text = "Inventario"
+flat = true
+
+[node name="Hab_btn" type="Button" parent="CenterContainer/Scale/Buttons" unique_id=1304710402]
+layout_mode = 2
+text = "Habilidades"
+flat = true
+
+[node name="main_btn" type="Button" parent="CenterContainer/Scale/Buttons" unique_id=1101649524]
+layout_mode = 2
+text = "Menú principal"
+flat = true
+
+[node name="exit_btn" type="Button" parent="CenterContainer/Scale/Buttons" unique_id=583164409]
+layout_mode = 2
+text = "Salir"
+flat = true
+
+[connection signal="pressed" from="CenterContainer/Scale/Buttons/continue_btn" to="." method="_on_continue"]
+[connection signal="pressed" from="CenterContainer/Scale/Buttons/Hab_btn" to="." method="_on_habilidades_btn_pressed"]
+[connection signal="pressed" from="CenterContainer/Scale/Buttons/main_btn" to="." method="_on_main_btn_pressed"]
+[connection signal="pressed" from="CenterContainer/Scale/Buttons/exit_btn" to="." method="_on_exit_btn_pressed"]

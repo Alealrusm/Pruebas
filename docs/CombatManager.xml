@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="CombatManager" inherits="RefCounted" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		Controlador de lógica de combate por turnos, sin nodos de escena.
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="_init">
+			<return type="void" />
+			<param index="0" name="_jugador" type="Character" />
+			<param index="1" name="_enemigo" type="Enemy" />
+			<param index="2" name="_datos_enemigo" type="Dictionary" />
+			<description>
+				Inicializa el combate y determina el orden de turnos por velocidad.
+			</description>
+		</method>
+		<method name="iniciar">
+			<return type="void" />
+			<description>
+				Comienza el combate emitiendo el turno del primer actor.
+			</description>
+		</method>
+		<method name="atacar_jugador">
+			<return type="void" />
+			<param index="0" name="skill" type="Skill" />
+			<description>
+				Ejecuta la skill del jugador sobre el enemigo y avanza el turno.
+			</description>
+		</method>
+		<method name="ejecutar_turno_enemigo">
+			<return type="void" />
+			<description>
+				Ejecuta la acción del enemigo sobre el jugador y avanza el turno.
+			</description>
+		</method>
+		<method name="_avanzar">
+			<return type="void" />
+			<description>
+				Revisa el estado del combate: derrota, fase 2 o siguiente turno.
+			</description>
+		</method>
+		<method name="_iniciar_fase2">
+			<return type="void" />
+			<description>
+				Actualiza los stats del enemigo con los datos de fase 2 y emite la señal de cambio.
+			</description>
+		</method>
+	</methods>
+	<members>
+		<member name="jugador" type="Character" setter="" getter="">
+		</member>
+		<member name="enemigo" type="Enemy" setter="" getter="">
+		</member>
+		<member name="orden" type="Array" setter="" getter="">
+			Define quién actúa primero según velocidad.
+		</member>
+		<member name="indice" type="int" setter="" getter="" default="0">
+		</member>
+		<member name="datos_enemigo" type="Dictionary" setter="" getter="">
+		</member>
+		<member name="en_fase2" type="bool" setter="" getter="" default="false">
+		</member>
+	</members>
+	<signals>
+		<signal name="turno_iniciado">
+			<param index="0" name="entidad" type="Variant" />
+			<description>
+			</description>
+		</signal>
+		<signal name="log_mensaje">
+			<param index="0" name="texto" type="Variant" />
+			<description>
+			</description>
+		</signal>
+		<signal name="combate_terminado">
+			<param index="0" name="victoria" type="bool" />
+			<description>
+			</description>
+		</signal>
+		<signal name="cambio_de_fase">
+			<param index="0" name="datos_fase2" type="Dictionary" />
+			<description>
+			</description>
+		</signal>
+	</signals>
+</class>

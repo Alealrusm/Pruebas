@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="&quot;scripts/UI/modal.gd&quot;" inherits="UI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="ready">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="_process">
+			<return type="void" />
+			<param index="0" name="delta" type="float" />
+			<description>
+				Called every frame. 'delta' is the elapsed time since the previous frame.
+			</description>
+		</method>
+	</methods>
+	<members>
+		<member name="btn_A_text" type="String" setter="" getter="">
+		</member>
+		<member name="btn_B_text" type="String" setter="" getter="">
+		</member>
+		<member name="btn_A" type="Button" setter="" getter="" default="&lt;unknown&gt;">
+		</member>
+		<member name="btn_B" type="Button" setter="" getter="" default="&lt;unknown&gt;">
+		</member>
+	</members>
+</class>

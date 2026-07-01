@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="UI" inherits="Control" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="ready" qualifiers="abstract">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="_ready">
+			<return type="void" />
+			<description>
+				Called when the node enters the scene tree for the first time.
+			</description>
+		</method>
+		<method name="_play_hover">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="_play_pressed">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="_play_deny">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="_process">
+			<return type="void" />
+			<param index="0" name="delta" type="float" />
+			<description>
+				Called every frame. 'delta' is the elapsed time since the previous frame.
+			</description>
+		</method>
+	</methods>
+</class>

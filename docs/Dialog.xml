@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="Dialog" inherits="Control" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="_ready">
+			<return type="void" />
+			<description>
+				Called when the node enters the scene tree for the first time.
+			</description>
+		</method>
+		<method name="_input">
+			<return type="void" />
+			<param index="0" name="event" type="InputEvent" />
+			<description>
+			</description>
+		</method>
+		<method name="_process">
+			<return type="void" />
+			<param index="0" name="delta" type="float" />
+			<description>
+				Called every frame. 'delta' is the elapsed time since the previous frame.
+			</description>
+		</method>
+		<method name="show_text_name">
+			<return type="void" />
+			<param index="0" name="text" type="String" />
+			<param index="1" name="name" type="String" />
+			<description>
+			</description>
+		</method>
+		<method name="show_text">
+			<return type="void" />
+			<param index="0" name="text" type="String" />
+			<description>
+			</description>
+		</method>
+		<method name="close_box">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+	</methods>
+	<members>
+		<member name="rolling" type="bool" setter="" getter="">
+		</member>
+		<member name="queue" type="String" setter="" getter="">
+		</member>
+		<member name="showing_text" type="String" setter="" getter="">
+		</member>
+		<member name="i" type="int" setter="" getter="">
+		</member>
+		<member name="n" type="int" setter="" getter="">
+		</member>
+		<member name="charpersec" type="Variant" setter="" getter="" default="25.0">
+		</member>
+		<member name="secperchar" type="float" setter="" getter="">
+		</member>
+		<member name="seccount" type="Variant" setter="" getter="" default="0">
+		</member>
+		<member name="objName" type="Label" setter="" getter="" default="&lt;unknown&gt;">
+		</member>
+		<member name="objText" type="Label" setter="" getter="" default="&lt;unknown&gt;">
+		</member>
+		<member name="scaler" type="Control" setter="" getter="" default="&lt;unknown&gt;">
+		</member>
+	</members>
+	<signals>
+		<signal name="cerrado">
+			<description>
+			</description>
+		</signal>
+	</signals>
+</class>

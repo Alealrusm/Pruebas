@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="Player" inherits="CharacterBody2D" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="_ready">
+			<return type="void" />
+			<description>
+				Called when the node enters the scene tree for the first time.
+			</description>
+		</method>
+		<method name="_input">
+			<return type="void" />
+			<param index="0" name="event" type="InputEvent" />
+			<description>
+			</description>
+		</method>
+		<method name="get_input">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="calc_animation">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="_physics_process">
+			<return type="void" />
+			<param index="0" name="delta" type="float" />
+			<description>
+			</description>
+		</method>
+		<method name="open_menu">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="check">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="set_camera_limit">
+			<return type="void" />
+			<param index="0" name="limitleft" type="int" />
+			<param index="1" name="limitright" type="int" />
+			<param index="2" name="limitup" type="int" />
+			<param index="3" name="limitdown" type="int" />
+			<description>
+			</description>
+		</method>
+	</methods>
+	<members>
+		<member name="speed" type="Variant" setter="" getter="" default="300">
+		</member>
+		<member name="run_scale" type="Variant" setter="" getter="" default="1.5">
+		</member>
+		<member name="cur_speed" type="float" setter="" getter="">
+		</member>
+		<member name="facing" type="Vector2" setter="" getter="">
+		</member>
+		<member name="running" type="Variant" setter="" getter="" default="false">
+		</member>
+		<member name="dialog" type="Dialog" setter="" getter="">
+		</member>
+		<member name="interact" type="RayCast2D" setter="" getter="">
+		</member>
+		<member name="walking" type="Variant" setter="" getter="" default="false">
+		</member>
+		<member name="sprite" type="Variant" setter="" getter="" default="&lt;unknown&gt;">
+		</member>
+		<member name="camera" type="Variant" setter="" getter="" default="&lt;unknown&gt;">
+		</member>
+		<member name="transition" type="ColorRect" setter="" getter="" default="&lt;unknown&gt;">
+		</member>
+	</members>
+	<constants>
+		<constant name="reach" value="70">
+		</constant>
+	</constants>
+</class>

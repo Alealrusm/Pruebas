@@ -1,0 +1,156 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cbetyautbdsfa"]
+
+[ext_resource type="Texture2D" uid="uid://b3ohtml1rl1kj" path="res://assets/sprites/P_Olivares/PatricioOlivares_Fight_Front_200x200.png" id="1_0xkop"]
+[ext_resource type="Texture2D" uid="uid://d2m5bnx4g4su7" path="res://assets/sprites/P_Olivares/PatricioOlivares_Map_Front_180x180.png" id="1_42pfo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhe6k"]
+atlas = ExtResource("1_0xkop")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3q4yw"]
+atlas = ExtResource("1_0xkop")
+region = Rect2(2800, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8an4"]
+atlas = ExtResource("1_0xkop")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8ws8"]
+atlas = ExtResource("1_0xkop")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpe3g"]
+atlas = ExtResource("1_0xkop")
+region = Rect2(2400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khfhu"]
+atlas = ExtResource("1_0xkop")
+region = Rect2(2600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xkop"]
+atlas = ExtResource("1_42pfo")
+region = Rect2(0, 0, 180, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8pn5"]
+atlas = ExtResource("1_42pfo")
+region = Rect2(180, 0, 180, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6a3t"]
+atlas = ExtResource("1_0xkop")
+region = Rect2(600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3loqm"]
+atlas = ExtResource("1_0xkop")
+region = Rect2(800, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16pv6"]
+atlas = ExtResource("1_0xkop")
+region = Rect2(1000, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0tx5"]
+atlas = ExtResource("1_0xkop")
+region = Rect2(1200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_riv4h"]
+atlas = ExtResource("1_0xkop")
+region = Rect2(1400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xpcmu"]
+atlas = ExtResource("1_0xkop")
+region = Rect2(1600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5iwwg"]
+atlas = ExtResource("1_0xkop")
+region = Rect2(1800, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8no5"]
+atlas = ExtResource("1_0xkop")
+region = Rect2(2000, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fixf6"]
+atlas = ExtResource("1_0xkop")
+region = Rect2(2200, 0, 200, 200)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhe6k")
+}],
+"loop": 0,
+"name": &"attack_patricio_phase1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3q4yw")
+}],
+"loop": 0,
+"name": &"attack_patricio_phase2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8an4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8ws8")
+}],
+"loop": 0,
+"name": &"combat_iddle_phase1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpe3g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khfhu")
+}],
+"loop": 0,
+"name": &"combat_iddle_phase2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xkop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8pn5")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6a3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3loqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16pv6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0tx5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_riv4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xpcmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5iwwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8no5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fixf6")
+}],
+"loop": 0,
+"name": &"phase_change",
+"speed": 5.0
+}]
