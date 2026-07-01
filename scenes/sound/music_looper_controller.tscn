@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://dftmu1awncxvm"]
-
-[ext_resource type="Script" uid="uid://bkp71dl1sqj81" path="res://scripts/sound/music_looper_controller.gd" id="1_0q3vj"]
-
-[node name="MusicLooperController" type="Node" unique_id=1090444098]
-process_mode = 3
-script = ExtResource("1_0q3vj")
-musicID = 1
