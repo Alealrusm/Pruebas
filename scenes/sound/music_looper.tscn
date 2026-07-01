@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b1f3qt724ym1d"]
+
+[ext_resource type="Script" uid="uid://tfso7xxex85g" path="res://scripts/sound/music_looper.gd" id="1_jkkwh"]
+
+[node name="MusicLooper" type="Node" unique_id=1719284121]
+process_mode = 3
+script = ExtResource("1_jkkwh")
+
+[node name="LoopStart" type="AudioStreamPlayer" parent="." unique_id=1627320542]
+
+[node name="Loop" type="AudioStreamPlayer" parent="." unique_id=2067416665]
+
+[connection signal="finished" from="LoopStart" to="." method="_on_loop_start_finished"]
