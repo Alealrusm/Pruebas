@@ -43,8 +43,10 @@ const EAST = 2
 
 const SOUTH = 4
 const WEST = 8
+const GET_ATTP : int = 10
 
 func _ready() -> void:
+	get_tree().paused = false
 	ATLAS_WALL_SET = []
 	ATLAS_WALL_SET.append(Vector2i(0, 68))
 	ATLAS_WALL_SET.append(Vector2i(8, 68))
@@ -62,8 +64,12 @@ func _ready() -> void:
 	# El algoritmo requiere dimensiones impares para aislar paredes
 	if width % 2 == 0: width += 1
 	if height % 2 == 0: height += 1
-	generate_logic_grid()
-	carve_maze()
+	var attp : int = 0
+	var gen : bool = false
+	while gen == false && attp < GET_ATTP: 
+		generate_logic_grid()
+		gen = carve_maze()
+		attp += 1
 	force_entry_exit()
 	maze_grid = generar_matriz_muros(maze_grid)
 	render_to_tilemap()
@@ -129,7 +135,7 @@ func generate_logic_grid() -> void:
 			maze_grid[x].append(WALL)
 
 # 2. Algoritmo Recursive Backtracker
-func carve_maze() -> void:
+func carve_maze() -> bool:
 	var stack: Array[Vector2i] = []
 	
 	# Iniciar en una celda impar para garantizar el espacio de las paredes
@@ -184,17 +190,19 @@ func carve_maze() -> void:
 								maze_grid[x][yi] = PATH
 								yi += 1
 						hall_count += 1
-
+			if x == width:
+				maze_grid[x][y] == WALL
+	return true
 # 3. Forzar las aperturas del inicio y fin
 func force_entry_exit() -> void:
 	# Entrada
-	maze_grid[entry_point.x][entry_point.y] = PATH
+	maze_grid[entry_point.x][entry_point.y] = WALL
 	# Conectar la entrada hacia adentro si está en el borde superior
 	if entry_point.y == 0:
 		maze_grid[entry_point.x][1] = PATH
 
 	# Salida
-	maze_grid[exit_point.x][exit_point.y] = PATH
+	maze_grid[exit_point.x][exit_point.y] = WALL
 	# Conectar la salida hacia adentro si está en el borde inferior
 	if exit_point.y == height - 1:
 		maze_grid[exit_point.x][height - 2] = PATH
@@ -236,7 +244,7 @@ func render_to_tilemap() -> void:
 			var is_path = (maze_grid[x][y] == 0)
 			set_tileset(maze_grid[x][y],x,y)
 			# Genera enemigos y props
-			if is_path && (Vector2i(x,y) != entry_point) && (Vector2i(x,y) != exit_point) :
+			if is_path && (Vector2i(x,y) != entry_point) && (Vector2i(x,y) != exit_point - Vector2i.UP) :
 				if summon_count < max_enemy_gen :
 					var summon : bool
 					summon =  randf_range(0,1) <=(float(max_enemy_gen)/float(path_count))
@@ -259,5 +267,3 @@ func render_to_tilemap() -> void:
 	
 	# 4. La añadimos a la escena (puede ser como hijo del mapa o del tilemap)
 	add_child(nueva_area)
-	
-	

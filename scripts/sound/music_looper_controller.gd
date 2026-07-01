@@ -1,11 +1,14 @@
 extends Node
-@export var loopStart : AudioStreamWAV
-@export var loop : AudioStreamWAV
-@export var thereIsStart : bool
-@export var musicID : int
+@export var loopStart : AudioStreamWAV = null
+@export var loop : AudioStreamWAV = null
+@export var thereIsStart : bool  = false
+@export var musicID : int = -1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if musicID == -1:
+		MusicLooper.stop()
+		return
 	if musicID == MusicLooper.musicID:
 		return
 	else:
@@ -15,7 +18,6 @@ func _ready() -> void:
 		MusicLooper.musicID = musicID
 		MusicLooper.thereIsStart = thereIsStart
 		MusicLooper.play()
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -8,5 +8,10 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		activar_evento()
 
-func activar_evento() -> void:
+func next() -> void:
 	get_tree().change_scene_to_file("res://scenes/map/dungeon.tscn")
+
+func activar_evento() -> void:
+	get_tree().paused = true
+	Global.transicion_fundido(1,next)
+	

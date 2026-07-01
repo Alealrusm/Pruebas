@@ -8,11 +8,7 @@ func changeScene(file):
 	var play = func play():
 		get_tree().change_scene_to_file(file)
 	$Sounds/Play.play()
-	var tweenI = create_tween()
-	tweenI.set_ease(Tween.EASE_OUT)
-	tweenI.set_trans(Tween.TRANS_LINEAR)
-	tweenI.tween_property($ColorRect, "modulate", Color.WHITE,3)
-	tweenI.tween_callback(play.call)
+	Global.transicion_fundido(5,play)
 
 func _on_test_btn_pressed() -> void:
 	changeScene("res://scenes/test.tscn")

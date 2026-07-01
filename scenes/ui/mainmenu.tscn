@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://bxg35mkwqvk02" path="res://assets/themes/MenuTheme.tres" id="2_r3g3c"]
 [ext_resource type="FontFile" uid="uid://bii4v2mv356md" path="res://assets/fonts/Pixeled.ttf" id="3_3vvtq"]
 [ext_resource type="PackedScene" uid="uid://c6joufqloq6ae" path="res://scenes/ui/sounds.tscn" id="4_cix78"]
+[ext_resource type="PackedScene" uid="uid://dftmu1awncxvm" path="res://scenes/sound/music_looper_controller.tscn" id="5_v8ire"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7q3kq"]
 font = ExtResource("3_3vvtq")
@@ -98,6 +99,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="MusicLooperController" parent="." unique_id=1090444098 instance=ExtResource("5_v8ire")]
+musicID = -1
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer2/Buttons/test_btn" to="." method="_on_test_btn_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer2/Buttons/testII_btn" to="." method="_on_test_ii_btn_pressed"]

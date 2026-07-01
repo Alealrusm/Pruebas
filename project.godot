@@ -18,8 +18,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Global="*uid://bvfyq03ny0nf3"
 MusicLooper="*uid://b1f3qt724ym1d"
+Global="*uid://bvcudylcct4cy"
 
 [display]
 

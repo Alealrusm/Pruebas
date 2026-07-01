@@ -30,7 +30,7 @@ tile_set = ExtResource("2_owhxh")
 [node name="Player" parent="." unique_id=2023377849 instance=ExtResource("3_4yg5c")]
 position = Vector2(8, 0)
 
-[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=984724807]
+[node name="SalaOscurecida" type="CanvasModulate" parent="." unique_id=984724807]
 color = Color(0.3515629, 0.3515629, 0.35156286, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=109215732]

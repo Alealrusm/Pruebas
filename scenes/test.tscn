@@ -127,6 +127,7 @@ Text = "Soy un letrero#Por si no lo habias notado"
 
 [node name="MusicLooperController" parent="Overworld" unique_id=1090444098 instance=ExtResource("10_ghpyy")]
 loop = ExtResource("11_ajshl")
+musicID = 2
 
 [editable path="Overworld/POlivares"]
 [editable path="Overworld/Lizama"]

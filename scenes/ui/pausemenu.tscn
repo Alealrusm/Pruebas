@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://gqekrny6rkbe" path="res://scripts/UI/pausemenu.gd" id="2_r33we"]
 [ext_resource type="Texture2D" uid="uid://c5ixel2eypxkw" path="res://assets/sprites/UI/box.png" id="3_i6c16"]
 [ext_resource type="PackedScene" uid="uid://c6joufqloq6ae" path="res://scenes/ui/sounds.tscn" id="4_ngfcr"]
+[ext_resource type="LabelSettings" uid="uid://b3jolvuegjccc" path="res://assets/fonts/ajustes_etiqueta1.tres" id="5_cvfoq"]
 
 [node name="PauseMenu" type="Control" unique_id=846825393]
 process_mode = 2
@@ -72,6 +73,35 @@ flat = true
 layout_mode = 2
 text = "Salir"
 flat = true
+
+[node name="GrupoInformación" type="Control" parent="." unique_id=82620810]
+anchors_preset = 0
+offset_left = -510.0
+offset_top = 236.0
+offset_right = -470.0
+offset_bottom = 276.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GrupoInformación" unique_id=630398097]
+layout_mode = 0
+offset_right = 304.0
+offset_bottom = 96.0
+
+[node name="player_label" type="Label" parent="GrupoInformación/VBoxContainer" unique_id=1835103865]
+layout_mode = 2
+text = "Super mechon"
+label_settings = ExtResource("5_cvfoq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GrupoInformación/VBoxContainer" unique_id=15745237]
+layout_mode = 2
+
+[node name="life_label" type="Label" parent="GrupoInformación/VBoxContainer/HBoxContainer" unique_id=383717008]
+layout_mode = 2
+text = "Vida:"
+label_settings = ExtResource("5_cvfoq")
+
+[node name="LifeSlider" type="HSlider" parent="GrupoInformación/VBoxContainer/HBoxContainer" unique_id=1494866913]
+layout_mode = 2
+value = 1.0
 
 [connection signal="pressed" from="CenterContainer/Scale/Buttons/continue_btn" to="." method="_on_continue"]
 [connection signal="pressed" from="CenterContainer/Scale/Buttons/Hab_btn" to="." method="_on_habilidades_btn_pressed"]

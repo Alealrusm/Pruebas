@@ -36,15 +36,6 @@ visible = false
 [node name="Dialog" parent="CanvasLayer" unique_id=675230336 instance=ExtResource("5_l1ths")]
 visible = false
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=677659953]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=108096528]
 process_mode = 3
 ignore_rotation = false

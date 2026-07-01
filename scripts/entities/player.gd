@@ -11,25 +11,16 @@ var interact : RayCast2D
 var walking = false
 @onready var sprite : AnimatedSprite2D = $Sprite
 @onready var camera : Camera2D = $Camera2D
-@onready var transition : ColorRect = $CanvasLayer/ColorRect
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var play = func play():
-		transition.hide()
-		set_process_input(true)
 	set_process_input(false)
-	transition.show()
 	dialog = $CanvasLayer/Dialog
 	interact = $Interact
 	get_tree().paused = false
 	facing = Vector2.ZERO
 	$Footsteps.stop()
 	walking = false
-	var tweenI : Tween = create_tween()
-	tweenI.set_ease(Tween.EASE_OUT)
-	tweenI.set_trans(Tween.TRANS_LINEAR)
-	tweenI.tween_property(transition, "modulate", Color.TRANSPARENT, 1)
-	tweenI.tween_callback(play.call)
+	set_process_input(true)
 	Global.camara_jugador_referencia = camera
 
 func _input(event: InputEvent) -> void:

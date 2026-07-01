@@ -50,4 +50,4 @@ func changeScene(file):
 
 	
 func _on_main_btn_pressed() -> void:
-	changeScene("res://scenes/main.tscn")
+	Global.transicion_fundido(1,func(): changeScene("res://scenes/main.tscn"))
