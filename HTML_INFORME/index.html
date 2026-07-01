@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Proyecto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #050218;
+            color: #FFFFFF;
+        }
+
+        h1, h2, h3 {
+            text-align: center; 
+            color: #FFFFFF; 
+        }
+
+        h2 {
+            border-bottom: 2px solid #FFFFFF;
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        img { 
+            max-width: 100%; 
+            height: auto; 
+            border: 2px solid #FFFFFF; 
+            border-radius: 5px;
+            display: block;
+            margin: 20px auto;
+        }
+
+        .section { 
+            margin-bottom: 40px; 
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        th, td {
+            border: 1px solid #FFFFFF;
+            padding: 15px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: rgba(255, 255, 255, 0.1);
+            font-size: 1.1em;
+        }
+        
+        /* Estilo sutil para los comandos de código en el texto */
+        code {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>BACKROOMS: LEVEL K</h1>
+    <p style="text-align: center;">Sebastian Saldias, Alvaro Leal, Pablo Gonzales, Alejandro Diaz</p>
+    
+    <div class="section">
+        <h2>Descripción del problema</h2>
+        <p>Como estudiantes universitarios, siempre nos encontramos bajo un estrés constante y una ansiedad incesante. Día a día nos levantamos para asistir a la universidad con proyectos pendientes, tareas sin terminar y controles que se aproximan. El problema que intentamos abordar y representar con nuestro videojuego es el agónico estrés que se sufre a medida que se afronta el semestre universitario.</p>
+    </div>
+
+    <div class="section">
+        <h2>Análisis del problema</h2>
+        <p>Para modelar esta experiencia, el sistema se estructura en torno a la interacción constante entre las decisiones del mundo real y las consecuencias en el entorno virtual. El <strong>Jugador</strong> asume el rol de usuario principal. Para interactuar con el sistema y el juego, el jugador lo hace mediante el <strong>Personaje Jugable (PJ)</strong>, el cual posee atributos como vida, ataque, defensa y velocidad. A medida que el jugador explora el mapa, el PJ interactúa y se enfrenta a los <strong>Enemigos (NPCs)</strong>. Estas entidades, controladas por el sistema, son los enemigos comunes en el contexto universitario, tomando la forma de controles escritos o profesores emblemáticos que poseen sus propias estadísticas y habilidades para complicar el progreso del estudiante.</p>
+        <p>Para la implementación del proyecto se utiliza <strong>Godot Engine</strong>, un motor de videojuegos cuya arquitectura se basa en <strong>nodos y escenas</strong>. Esta estructura modular permite construir los elementos del juego de forma independiente e instanciable, logrando un alto nivel de desacoplamiento entre la exploración y el combate. La lógica interna se desarrolla en <strong>GDScript</strong>, su lenguaje nativo orientado a objetos. Esto facilita la aplicación de conceptos formales de ingeniería de software en la arquitectura del juego, tales como la herencia de clases para estructurar las habilidades, el patrón Singleton para la persistencia de datos globales, y el uso de <strong>señales</strong> para actualizar componentes visuales de manera eficiente y sin dependencias acopladas.</p>
+    </div>
+
+    <div class="section">
+        <h2>Casos de Uso</h2>
+        <p><strong>Inicio de partida:</strong> El jugador navega por la ventana principal del juego y selecciona jugar. El sistema automáticamente procesa que el jugador ha seleccionado la opción de jugar, por lo que genera un mapa de manera procedural. Una vez el mapa es creado, se sitúa al PJ en este y finalmente se le muestra lo generado al jugador.</p>
+        <p><strong>Iniciar un combate:</strong> El jugador entra en el área de detección de un enemigo y cuando este es alcanzado por el NPC, el sistema cambia la vista del mapa a la vista de combate, calculando la vista del enemigo, mostrando las opciones dentro del combate y finalmente muestra al jugador la perspectiva dentro del combate con todo calculado y preparado.</p>
+        <p><strong>Jugador ataca:</strong> El jugador selecciona la opción atacar dentro de la vista de combate, por lo que el sistema calcula el daño que recibe el enemigo, cambia los valores de la vida restante del NPC dependiendo de la cantidad de defensa de este y finalmente realiza la animación de ataque del PJ y enseña el daño que se le realizó al NPC.</p>
+        <p><strong>Curarse:</strong> El jugador selecciona la opción de curarse, lo cual puede hacer dentro o fuera de combate.</p>
+        <img src="imagenes/CASODEUSO.png" alt="Casos de uso">
+    </div>
+
+    <div class="section">
+        <h2>Diagramas UML</h2>
+        <p>A continuación se mostrarán los diferentes diagramas de clases separados por el contexto del proyecto, ya que resulta más fácil y ordenado mostrar de esta forma cómo se relacionan las clases entre sí. Algunas clases son usadas para la generación del mapa y la interacción de las entidades en este, otras para la lógica de los combates, y además se cuenta con algunas dedicadas a la persistencia de datos.</p>
+        
+        <h3>Subsistema de Exploración</h3>
+        <p>Este módulo gestiona la generación procedural del campus y la interacción física del jugador (PJ) con los profesores y controles (NPCs).</p>
+        <img src="imagenes/DIAGRAMAMAPA.drawio.png" alt="Diagrama de Clases - Exploración">
+        
+        <h3>Subsistema de Combate</h3>
+        <p>Aquí se concentra la lógica orientada a objetos de la batalla por turnos, aplicando herencia para las distintas habilidades y encapsulando el flujo mediante un Manager.</p>
+        <img src="imagenes/DIAGRAMACOMBATE.drawio.png" alt="Diagrama de Clases - Combate">
+
+        <h3>Subsistema de Control Global</h3>
+        <p>Componentes Singleton responsables de la persistencia de datos (estadísticas del jugador, base de datos de enemigos) durante las transiciones de escena.</p>
+        <img src="imagenes/DIAGRAMAPERSISTENCIA.drawio.png" alt="Diagrama de Clases - Global">
+    </div>
+
+    <div class="section">
+        <h2>Diagrama de Secuencia</h2>
+        <p>Este diagrama ilustra lo que ocurre al iniciar el juego, representando específicamente el caso de uso "Inicio de partida".</p>
+        <img src="imagenes/secuenciaIniciarJuego.drawio.png" alt="Diagrama de secuencia - Inicio de partida">
+    </div>
+
+    <div class="section">
+        <h2>Implementación</h2>
+        <p>Para generar el archivo de documentación realiza los siguientes pasos:</p>
+        <ol>
+            <li>Abre la consola (cmd o terminal) de tu computador e ingresa a la carpeta del proyecto <code>/proyecto-elo329</code>.</li>
+            <li>Abre el proyecto desde Godot.</li>
+            <li>Ejecuta el siguiente comando desde la consola previamente abierta:<br><code>"ruta-del-ejecutable-de-Godot\Godot_v4.6-stable_win64.exe" --doctool ./docs --gdscript-docs .</code></li>
+            <li>Ejecuta el siguiente comando desde la carpeta del proyecto:<br><code>py xml_to_html.py</code></li>
+            <li>Para ver el HTML con la documentación, ingresa a la carpeta <code>docs</code> y abre el archivo generado de nombre <code>documentacion.html</code>.</li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>Pruebas</h2>
+        <h3>Prueba del Caso de Uso 1</h3>
+        <img src="imagenes/lol.png" alt="Captura de prueba 1">
+        <p>Blabla</p>
+    </div> <div class="section">
+        <h2>Dificultades y Soluciones</h2>
+        <p>Durante el desarrollo del videojuego, se presentaron los siguientes desafíos técnicos relacionados con el entorno de Godot y GDScript:</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Dificultad Presentada</th>
+                    <th>Solución Implementada</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1. Control y estabilización del movimiento enemigo:</strong> Durante la implementación de las mecánicas de pathfinding, los enemigos comunes presentaban comportamientos erráticos en el motor de físicas, tales como desplazarse a velocidades desproporcionadas o desaparecer abruptamente de los límites de la escena gráfica.</td>
+                    <td>Se diseñó e implementó una clase dedicada denominada <code>Movement</code>. Esta clase encapsula y estandariza exclusivamente la lógica matemática de desplazamiento y cálculo de deltas de tiempo para los enemigos comunes, permitiendo un control preciso sobre sus velocidades y colisiones sin afectar el comportamiento de otras entidades o del jugador.</td>
+                </tr>
+                <tr>
+                    <td><strong>2. Mapeo de texturas en la generación procedural del entorno:</strong> Se presentó una alta complejidad al intentar asignar correctamente los <em>assets</em> visuales (específicamente texturas de paredes y techos) sobre la matriz lógica del laberinto generada proceduralmente, provocando solapamientos o renderizados inconsistentes en el TileMap.</td>
+                    <td>Tras múltiples iteraciones analíticas y pruebas de renderizado, se refactorizó la lógica algorítmica dentro de las clases encargadas de generar el mapa. Se ajustaron las reglas de lectura de la cuadrícula, asegurando que el sistema interprete correctamente las coordenadas relativas para colocar la textura exacta (suelo, pared o techo) según el contexto del bloque adyacente.</td>
+                </tr>
+                <tr>
+                    <td><strong>3. Persistencia del estado del mapa en transiciones de escena:</strong> Al iniciar un evento de pelea, la transición estructural hacia la escena de combate provocaba que el árbol de nodos del mapa procedural se destruyera (liberándose de la memoria), obligando a generar un nivel completamente nuevo al intentar volver a la exploración.</td>
+                    <td>Se modificó el flujo de gestión de escenas utilizando la memoria global. En lugar de destruir el nivel, el mapa generado se retiene en memoria (pausando sus procesos). Una vez finalizado el encuentro, la escena de combate simplemente se oculta o elimina, y se restaura el entorno previamente guardado, conservando intacta la disposición del laberinto y la ubicación del jugador.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Repositorio</h2>
+        <p>El código fuente (junto con su respectivo README) se encuentra disponible en el siguiente enlace:</p>
+        <a href="https://github.com/disco-japi/proyecto-elo329" target="_blank">Ir al repositorio en GitHub</a>
+    </div>
+
+</body><!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Proyecto</title>
+    <style>
+       body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #050218; /* Este es el azul cobalto */
+    color: #FFFFFF; /* Esto pone todo el texto general en blanco */
+}
+
+/* Agrupamos h1, h2 y h3 para que todos estén centrados y sean blancos */
+h1, h2, h3 {
+    text-align: center; 
+    color: #FFFFFF; 
+}
+
+h2 {
+    border-bottom: 2px solid #FFFFFF; /* Línea de subrayado */
+    padding-bottom: 5px; /* Espacio entre el texto y la línea */
+    margin-top: 30px; /* Espacio extra arriba de cada sección para que no se vea amontonado */
+}
+
+img { 
+    max-width: 100%; 
+    height: auto; 
+    border: 2px solid #FFFFFF; 
+    border-radius: 5px;
+    display: block;
+    margin: 20px auto; /* Esto también centra las imágenes automáticamente */
+}
+
+.section { 
+    margin-bottom: 40px; 
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: rgba(255, 255, 255, 0.05); /* Le da un fondo sutil a la tabla */
+}
+
+th, td {
+    border: 1px solid #FFFFFF;
+    padding: 15px;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background-color: rgba(255, 255, 255, 0.1); /* Destaca la cabecera */
+    font-size: 1.1em;
+}
+    </style>
+</head>
+<body>
+
+    <h1>BACKROOMS: LEVEL K</h1>
+    <p>Sebastian Saldias,
+     Alvaro Leal,
+     Pablo Gonzales,
+     Alejandro Diaz</p>
+<div class="section">
+        <h2>Descripción del problema</h2>
+        <p>Como estudiantes universitarios, siempre nos encontramos bajo un estrés constante y una ansiedad incesante. Día a día nos levantamos para asistir a la universidad con proyectos pendientes, tareas sin terminar y controles que se aproximan. El problema que intentamos abordar y representar con nuestro videojuego es el agónico estrés que se sufre a medida que se afronta el semestre universitario.</p>
+    </div>
+
+<div class="section">
+        <h2>Análisis del problema</h2>
+        <p>Para modelar esta experiencia, el sistema se estructura en torno a la interacción constante entre las decisiones del mundo real y las consecuencias en el entorno virtual. El <strong>Jugador</strong> asume el rol de usuario principal, para interactuar con el sistema y el juego, el jugador lo hace mediante el <strong>Personaje Jugable (PJ)</strong>, el cual posee atributos como vida, ataque, defensa y velocidad. A medida que el jugador explora el mapa, el PJ interactúa y se enfrenta a los <strong>Enemigos (NPCs)</strong>. Estas entidades, controladas por el sistema, son los enemigos comunes en el contexto universitario, tomando la forma de controles escritos o profesores emblemáticos que poseen sus propias estadísticas y habilidades para complicar el progreso del estudiante.</p>
+       <p>Para la implementación del proyecto se utiliza <strong>Godot Engine</strong>, un motor de videojuegos cuya arquitectura se basa en <strong>nodos y escenas</strong>. Esta estructura modular permite construir los elementos del juego de forma independiente y instanciable, logrando un alto nivel de desacoplamiento entre la exploración y el combate. La lógica interna se desarrolla en <strong>GDScript</strong>, su lenguaje nativo orientado a objetos. Esto facilita la aplicación de conceptos formales de ingeniería de software en la arquitectura del juego, tales como la herencia de clases para estructurar las habilidades, el patrón Singleton para la persistencia de datos globales, y el uso de <strong>señales</strong> para actualizar componentes visuales de manera eficiente y sin dependencias acopladas.</p>
+    </div>
+
+    <div class="section">
+        <h2>Casos de Uso</h2>
+        <ul>
+            <p><strong>Inicio de partida:</strong> El jugador navega por la ventana principal del juego y selecciona jugar. El sistema automáticamente procesa que el jugador ha seleccionado la opción de jugar, por lo que genera un mapa de manera procedural. Una vez el mapa es creado, se sitúa al PJ en este y finalmente se le muestra lo generado al jugador.</p>
+            <p><strong>Iniciar un combate:</strong> El jugador entra en el área de detección de un enemigo y cuando este es alcanzado por el NPC, el sistema cambia la vista del mapa a la vista de combate, calculando la vista del enemigo, mostrando las opciones dentro del combate y finalmente muestra al jugador la perspectiva dentro del combate con todo calculado y preparado.</p>
+            <p><strong>Jugador ataca:</strong> El jugador selecciona la opción atacar dentro de la vista de combate, por lo que el sistema calcula el daño que recibe el enemigo, cambia los valores de la vida restante del NPC dependiendo de la cantidad de defensa de este y finalmente realiza la animación de ataque del PJ y enseña el daño que se le realizó al NPC.</p>
+            <p><strong>Curarse:</strong> El jugador selecciona la opcion de curarse, lo puede hacer dentro o fuera de combate</p>
+            <img src="imagenes/CASODEUSO.png" alt="Casos de uso">
+        </ul>
+    </div>
+
+<div class="section">
+        <h2>Diagramas UML</h2>
+        <p>A continuacion se mostraran los diferentes diagramas de clases diseccionados por contexto del proyecto, pues es mas facil y ordenado el mostrar de esta forma el como se relacionan las clases entre si al tener contextos diferentes, pues algunas clases son usadas para la generacion del mapa y la interaccion de las entidades en este y otras para la logica dfe los combates ademas de tener algunas para la persitencia de datos.</p>
+        <h3>Subsistema de Exploración</h3>
+        <p>Este módulo gestiona la generación procedural del campus y la interacción física del jugador (PJ) con los profesores y controles (NPCs).</p>
+        <img src="imagenes/DIAGRAMAMAPA.drawio.png" alt="Diagrama de Clases - Exploración">
+        
+        <h3>Subsistema de Combate</h3>
+        <p>Aquí se concentra la lógica orientada a objetos de la batalla por turnos, aplicando herencia para las distintas habilidades y encapsulando el flujo mediante un Manager.</p>
+        <img src="imagenes/DIAGRAMACOMBATE.drawio.png" alt="Diagrama de Clases - Combate">
+
+        <h3>Subsistema de Control Global</h3>
+        <p>Componentes Singleton responsables de la persistencia de datos (estadísticas del jugador, base de datos de enemigos) durante las transiciones de escena.</p>
+        <img src="imagenes/DIAGRAMAPERSISTENCIA.drawio.png" alt="Diagrama de Clases - Global">
+    </div>
+<div class="section">
+        <h2>Diagrama de secuencia</h2>
+        <p>Este diagrama ilustra loo que ocurre al inicar el juego, reperesentando especificamente el caso de uso "Inicio de partida"</p>
+        <img src="imagenes/secuenciaIniciarJuego.drawio.png" alt="Diagrama de secuencia - Inicio de partida">
+
+</div>
+    <div class="section">
+        <h2>Implementación</h2>
+        <p>La documentación técnica y de implementación se encuentra detallada directamente en el código fuente del proyecto mediante comentarios. No se incluyen archivos generados (como Javadoc) en esta entrega para evitar redundancia.</p>
+    </div>
+
+    <div class="section">
+        <h2>Pruebas</h2>
+        <h3>Prueba del Caso de Uso 1</h3>
+        <img src="imagenes/lol.png" alt="Captura de prueba 1">
+        <p>Blabla</p>
+
+<div class="section">
+        <h2>Dificultades y Soluciones</h2>
+        <p>Durante el desarrollo del videojuego, se presentaron los siguientes desafíos técnicos relacionados con el entorno de Godot y GDScript:</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Dificultad Presentada</th>
+                    <th>Solución Implementada</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>1. Control y estabilización del movimiento enemigo:</strong> Durante la implementación de las mecánicas de pathfinding, los enemigos comunes presentaban comportamientos erráticos en el motor de físicas, tales como desplazarse a velocidades desproporcionadas o desaparecer abruptamente de los límites de la escena gráfica.</td>
+                    <td>Se diseñó e implementó una clase dedicada denominada <code>Movement</code>. Esta clase encapsula y estandariza exclusivamente la lógica matemática de desplazamiento y cálculo de deltas de tiempo para los enemigos comunes, permitiendo un control preciso sobre sus velocidades y colisiones sin afectar el comportamiento de otras entidades o del jugador.</td>
+                </tr>
+                <tr>
+                    <td><strong>2. Mapeo de texturas en la generación procedural del entorno:</strong> Se presentó una alta complejidad al intentar asignar correctamente los <em>assets</em> visuales (específicamente texturas de paredes y techos) sobre la matriz lógica del laberinto generada proceduralmente, provocando solapamientos o renderizados inconsistentes en el TileMap.</td>
+                    <td>Tras múltiples iteraciones analíticas y pruebas de renderizado, se refactorizó la lógica algorítmica dentro de las clases encargadas de generar el mapa. Se ajustaron las reglas de lectura de la cuadrícula, asegurando que el sistema interprete correctamente las coordenadas relativas para colocar la textura exacta (suelo, pared o techo) según el contexto del bloque adyacente.</td>
+                </tr>
+                <tr>
+                    <td><strong>3. Persistencia del estado del mapa en transiciones de escena:</strong> Al iniciar un evento de pelea, la transición estructural hacia la escena de combate provocaba que el árbol de nodos del mapa procedural se destruyera (liberándose de la memoria), obligando a generar un nivel completamente nuevo al intentar volver a la exploración.</td>
+                    <td>Se modificó el flujo de gestión de escenas utilizando la memoria global. En lugar de destruir el nivel, el mapa generado se retiene en memoria (pausando sus procesos). Una vez finalizado el encuentro, la escena de combate simplemente se oculta o elimina, y se restaura el entorno previamente guardado, conservando intacta la disposición del laberinto y la ubicación del jugador.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section">
+        <h2>Repositorio</h2>
+        <p>El código fuente (junto con su respectivo README) se encuentra disponible en el siguiente enlace:</p>
+        <a href="https://github.com/disco-japi/proyecto-elo329" target="_blank">Ir al repositorio en GitHub</a>
+    </div>
+
+</body>
+</html>
