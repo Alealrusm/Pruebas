@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="&quot;scripts/combat/combat.gd&quot;" inherits="Control" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		Escena principal de combate: inicializa la UI, conecta señales y gestiona los turnos.
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="_ready">
+			<return type="void" />
+			<description>
+				Carga el jugador, enemigo y habilidades desde Global; crea el CombatManager y arranca el combate.
+			</description>
+		</method>
+		<method name="_usar_skill">
+			<return type="void" />
+			<param index="0" name="skill" type="Skill" />
+			<description>
+				Reproduce animación de ataque del jugador, espera 1s y pasa el turno al manager.
+			</description>
+		</method>
+		<method name="_deshabilitar_botones">
+			<return type="void" />
+			<param index="0" name="valor" type="bool" />
+			<description>
+			</description>
+		</method>
+		<method name="_on_turno">
+			<return type="void" />
+			<param index="0" name="entidad" type="Variant" />
+			<description>
+				Maneja el inicio de cada turno: habilita botones si es el jugador o ejecuta IA del enemigo.
+			</description>
+		</method>
+		<method name="_on_cambio_fase">
+			<return type="void" />
+			<param index="0" name="datos_fase2" type="Dictionary" />
+			<description>
+				Guarda los datos de fase 2 en Global y carga transform.tscn para la cinemática.
+			</description>
+		</method>
+		<method name="_on_log">
+			<return type="void" />
+			<param index="0" name="texto" type="String" />
+			<description>
+			</description>
+		</method>
+		<method name="_on_fin">
+			<return type="void" />
+			<param index="0" name="victoria" type="bool" />
+			<description>
+				Victoria: guarda HP del jugador, elimina el NPC del mapa y cierra la capa de combate. Derrota: restaura HP completo y vuelve a la escena de origen.
+			</description>
+		</method>
+	</methods>
+	<members>
+		<member name="player_hp_bar" type="ProgressBar" setter="" getter="" default="&lt;unknown&gt;">
+		</member>
+		<member name="enemy_hp_bar" type="ProgressBar" setter="" getter="" default="&lt;unknown&gt;">
+		</member>
+		<member name="log_label" type="Label" setter="" getter="" default="&lt;unknown&gt;">
+		</member>
+		<member name="btn_ataque" type="Button" setter="" getter="" default="&lt;unknown&gt;">
+		</member>
+		<member name="btn_habilidad1" type="Button" setter="" getter="" default="&lt;unknown&gt;">
+		</member>
+		<member name="btn_habilidad2" type="Button" setter="" getter="" default="&lt;unknown&gt;">
+		</member>
+		<member name="player_sprite" type="AnimatedSprite2D" setter="" getter="" default="&lt;unknown&gt;">
+		</member>
+		<member name="enemy_sprite" type="AnimatedSprite2D" setter="" getter="" default="&lt;unknown&gt;">
+		</member>
+		<member name="manager" type="CombatManager" setter="" getter="">
+		</member>
+		<member name="jugador" type="Character" setter="" getter="">
+		</member>
+		<member name="enemigo" type="Enemy" setter="" getter="">
+		</member>
+		<member name="datos_enemigo" type="Dictionary" setter="" getter="">
+		</member>
+	</members>
+</class>
