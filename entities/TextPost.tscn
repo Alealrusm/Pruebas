@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://2r5ms5xyfkuf"]
+
+[ext_resource type="AudioStream" uid="uid://s8jphpvjb3fr" path="res://assets/sounds/propios/info.wav" id="1_fnr25"]
+[ext_resource type="Script" uid="uid://s1nsc7v5k7je" path="res://scripts/entities/textpost.gd" id="1_iid2g"]
+[ext_resource type="PackedScene" uid="uid://ub66l03jvyhu" path="res://scenes/ui/dialog.tscn" id="3_m28as"]
+[ext_resource type="Texture2D" uid="uid://bqsf88kotac3v" path="res://assets/sprites/demosprite.png" id="4_m28as"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lxado"]
+
+[node name="TextPost" type="StaticBody2D" unique_id=1743283590]
+process_mode = 3
+script = ExtResource("1_iid2g")
+Text = "Holala"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1714711667]
+scale = Vector2(2.335, 1)
+shape = SubResource("RectangleShape2D_lxado")
+
+[node name="InfoSound" type="AudioStreamPlayer2D" parent="." unique_id=890592093]
+stream = ExtResource("1_fnr25")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=669045541]
+
+[node name="Dialog" parent="CanvasLayer" unique_id=675230336 instance=ExtResource("3_m28as")]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=207818148]
+position = Vector2(0, -13.42)
+scale = Vector2(0.73, 0.73)
+texture = ExtResource("4_m28as")

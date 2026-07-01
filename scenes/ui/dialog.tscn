@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://ub66l03jvyhu"]
+
+[ext_resource type="Script" uid="uid://c3i8j8nmnr88n" path="res://scripts/UI/Dialog.gd" id="1_t7mmw"]
+[ext_resource type="FontFile" uid="uid://bii4v2mv356md" path="res://assets/fonts/Pixeled.ttf" id="2_uvbxx"]
+[ext_resource type="Texture2D" uid="uid://rnerfdkfq8gw" path="res://assets/sprites/UI/textbox.png" id="2_xqt65"]
+[ext_resource type="AudioStream" uid="uid://bc8prh0f5q0n6" path="res://assets/sounds/yume/write.wav" id="4_hkpcf"]
+[ext_resource type="PackedScene" uid="uid://c6joufqloq6ae" path="res://scenes/ui/sounds.tscn" id="5_m25m8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hkpcf"]
+font = ExtResource("2_uvbxx")
+font_size = 15
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 0.36078432)
+
+[node name="Dialog" type="Control" unique_id=675230336]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t7mmw")
+
+[node name="Chat" type="AudioStreamPlayer" parent="." unique_id=1952958706]
+stream = ExtResource("4_hkpcf")
+volume_db = -10.0
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=779919486]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 242.0
+offset_bottom = 242.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Scale" type="Control" parent="CenterContainer" unique_id=590864087]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CenterContainer/Scale" unique_id=1797064364]
+scale = Vector2(5.640625, 3.3125)
+texture = ExtResource("2_xqt65")
+
+[node name="Text" type="Label" parent="CenterContainer/Scale" unique_id=2122923942]
+clip_contents = true
+custom_minimum_size = Vector2(600, 150)
+layout_mode = 0
+offset_left = -318.0
+offset_top = -63.0
+offset_right = 282.0
+offset_bottom = 87.0
+label_settings = SubResource("LabelSettings_hkpcf")
+autowrap_mode = 3
+
+[node name="Name" type="Label" parent="CenterContainer/Scale" unique_id=8706924]
+custom_minimum_size = Vector2(650, 20)
+layout_mode = 0
+offset_left = -325.0
+offset_top = -95.0
+offset_right = 325.0
+offset_bottom = -53.0
+label_settings = SubResource("LabelSettings_hkpcf")
+
+[node name="Sounds" parent="." unique_id=1762840408 instance=ExtResource("5_m25m8")]
