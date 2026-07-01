@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cbetyautbdsfa"]
+
+[ext_resource type="Texture2D" uid="uid://d2m5bnx4g4su7" path="res://assets/sprites/P_Olivares/PatricioOlivares_Map_Front_180x180.png" id="1_42pfo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0xkop"]
+atlas = ExtResource("1_42pfo")
+region = Rect2(0, 0, 180, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8pn5"]
+atlas = ExtResource("1_42pfo")
+region = Rect2(180, 0, 180, 180)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0xkop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8pn5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]

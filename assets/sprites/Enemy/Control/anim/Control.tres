@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://d4a1m6gc8is38"]
+
+[ext_resource type="Texture2D" uid="uid://bhouen7hovkf2" path="res://assets/sprites/Enemy/Control/Control_Map_Global_180x180.png" id="1_hvtef"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6wvy"]
+atlas = ExtResource("1_hvtef")
+region = Rect2(0, 0, 180, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjhv5"]
+atlas = ExtResource("1_hvtef")
+region = Rect2(180, 0, 180, 180)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6wvy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjhv5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

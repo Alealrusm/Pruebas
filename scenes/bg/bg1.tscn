@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://bq0ufox12pdr2"]
+
+[ext_resource type="Script" uid="uid://d2mju83g04iey" path="res://scripts/combat/bg.gd" id="1_qko6v"]
+[ext_resource type="Shader" uid="uid://clgem6ll64s3w" path="res://assets/shaders/eb.gdshader" id="2_j4fie"]
+[ext_resource type="Texture2D" uid="uid://1sfvg5h4sgha" path="res://assets/sprites/shapes/circle.png" id="2_xv413"]
+
+[sub_resource type="Curve" id="Curve_j4fie"]
+_data = [Vector2(0, 0.63937753), 0.0, 0.0, 0, 0, Vector2(0.21666668, 0.868065), 0.0, 0.0, 0, 0, Vector2(0.47333336, 0.6481732), 0.0, 0.0, 0, 0, Vector2(0.81000006, 0.48985112), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Curve" id="Curve_1krn5"]
+_data = [Vector2(0, 0.3227334), 0.0, 0.0, 0, 0, Vector2(0.26999998, 0.52503383), 0.0, 0.0, 0, 0, Vector2(0.77000004, 0.30514205), 0.0, 0.0, 0, 0, Vector2(0.9066667, 0.7097429), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_fdin3"]
+curve_x = SubResource("Curve_j4fie")
+curve_y = SubResource("Curve_1krn5")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1krn5"]
+shader = ExtResource("2_j4fie")
+shader_parameter/screen_height = 768.0
+shader_parameter/amplitude = 0.135
+shader_parameter/frequency = 10.0
+shader_parameter/speed = 2.0
+shader_parameter/amplitude_vertical = 0.305
+shader_parameter/frequency_vertical = 10.0
+shader_parameter/speed_vertical = 0.0
+shader_parameter/scroll_direction = Vector2(0, 0)
+shader_parameter/scrolling_speed = 0.19
+shader_parameter/enable_palette_cycling = true
+shader_parameter/palette = SubResource("CurveXYZTexture_fdin3")
+shader_parameter/palette_speed = 0.1
+
+[node name="Bg1" type="Node2D" unique_id=394354834]
+script = ExtResource("1_qko6v")
+colorI = Color(0.51936686, 8.831993e-06, 0.3624191, 1)
+colorF = Color(0.5619763, 0.0011386774, 0.7063459, 1)
+time = 2.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=352412122]
+layer = -1
+
+[node name="blackborder" type="ColorRect" parent="CanvasLayer" unique_id=377155601]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="bg" type="ColorRect" parent="CanvasLayer" unique_id=1221666137]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 0.705)
+pivot_offset = Vector2(512, 384)
+color = Color(0, 0, 0.5294118, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=1572454201]
+self_modulate = Color(0.9999998, 0.12118318, 0.6831895, 1)
+material = SubResource("ShaderMaterial_1krn5")
+position = Vector2(511.2422, 383.04688)
+scale = Vector2(3.9824827, 2.1011963)
+texture = ExtResource("2_xv413")

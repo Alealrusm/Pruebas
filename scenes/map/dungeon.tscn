@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://unpmj5tfqjs6"]
+
+[ext_resource type="Script" uid="uid://is20b7p0kaq" path="res://scripts/map/levelcontroller.gd" id="1_lpaxb"]
+[ext_resource type="TileSet" uid="uid://th4sg5tn4kx6" path="res://assets/tilesets/tilesetK.tres" id="2_owhxh"]
+[ext_resource type="PackedScene" uid="uid://c7pwbxhd4ei4j" path="res://entities/Player.tscn" id="3_4yg5c"]
+[ext_resource type="PackedScene" uid="uid://dftmu1awncxvm" path="res://scenes/sound/music_looper_controller.tscn" id="5_gkkmt"]
+[ext_resource type="AudioStream" uid="uid://n6ulqanqssmt" path="res://assets/music/edificioK.wav" id="6_vghkw"]
+[ext_resource type="Texture2D" uid="uid://cqyly2odcumu" path="res://assets/sprites/demosprite2.png" id="7_5gasx"]
+
+[node name="Dungeon" type="Node2D" unique_id=1245706142]
+y_sort_enabled = true
+script = ExtResource("1_lpaxb")
+width = 25
+height = 17
+path_thickness = 12
+entry_point = Vector2i(23, 16)
+exit_point = Vector2i(1, 0)
+max_enemy_gen = 20
+random_halls = true
+halls_x = true
+halls_y = true
+max_halls = 8
+hall_prob = 0.1
+
+[node name="Map" type="TileMapLayer" parent="." unique_id=298289048]
+y_sort_enabled = true
+use_parent_material = true
+tile_set = ExtResource("2_owhxh")
+
+[node name="Player" parent="." unique_id=2023377849 instance=ExtResource("3_4yg5c")]
+position = Vector2(8, 0)
+
+[node name="SalaOscurecida" type="CanvasModulate" parent="." unique_id=984724807]
+color = Color(0.3515629, 0.3515629, 0.35156286, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=109215732]
+position = Vector2(-156, -124)
+texture = ExtResource("7_5gasx")
+
+[node name="MusicLooperController" parent="." unique_id=1090444098 instance=ExtResource("5_gkkmt")]
+loop = ExtResource("6_vghkw")
