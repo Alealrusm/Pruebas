@@ -1,6 +1,7 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://c1gidadnqpbu3"]
 
 [ext_resource type="Texture2D" uid="uid://1cxdsevnaj4l" path="res://assets/sprites/Player/Jugador_Map_Complete_180x180.png" id="1_agegx"]
+[ext_resource type="Texture2D" uid="uid://b6jcdt0bc4l18" path="res://assets/sprites/Player/Jugador_Fight_Back_200x200.png" id="2_ckrpy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_agegx"]
 atlas = ExtResource("1_agegx")
@@ -17,6 +18,18 @@ region = Rect2(540, 0, 180, 180)
 [sub_resource type="AtlasTexture" id="AtlasTexture_4kl3b"]
 atlas = ExtResource("1_agegx")
 region = Rect2(720, 0, 180, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s230r"]
+atlas = ExtResource("2_ckrpy")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8l34p"]
+atlas = ExtResource("2_ckrpy")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4oxbl"]
+atlas = ExtResource("2_ckrpy")
+region = Rect2(400, 0, 200, 200)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1wuoh"]
 atlas = ExtResource("1_agegx")
@@ -63,7 +76,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ckrpy")
 }],
-"loop": true,
+"loop": 1,
 "name": &"back",
 "speed": 5.0
 }, {
@@ -74,8 +87,22 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4kl3b")
 }],
-"loop": true,
+"loop": 1,
 "name": &"dright",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s230r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8l34p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4oxbl")
+}],
+"loop": 0,
+"name": &"fight",
 "speed": 5.0
 }, {
 "frames": [{
@@ -91,7 +118,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sv5wp")
 }],
-"loop": true,
+"loop": 1,
 "name": &"front",
 "speed": 5.0
 }, {
@@ -99,8 +126,19 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sv5wp")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s230r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8l34p")
+}],
+"loop": 2,
+"name": &"idle_fight",
 "speed": 5.0
 }, {
 "frames": [{
@@ -110,7 +148,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lm067")
 }],
-"loop": true,
+"loop": 1,
 "name": &"right",
 "speed": 5.0
 }, {
@@ -121,7 +159,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j0y3e")
 }],
-"loop": true,
+"loop": 1,
 "name": &"uleft",
 "speed": 5.0
 }, {
@@ -132,7 +170,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1qgju")
 }],
-"loop": true,
+"loop": 1,
 "name": &"uright",
 "speed": 5.0
 }]

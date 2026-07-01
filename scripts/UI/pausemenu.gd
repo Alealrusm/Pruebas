@@ -1,6 +1,6 @@
 extends UI
 @onready var scaler : Control = $CenterContainer/Scale
-# Called when the node enters the scene tree for the first time.
+## Called when the node enters the scene tree for the first time.
 func ready() -> void:
 	hide()
 	if Global.abrir_pausa_al_volver:
@@ -50,4 +50,4 @@ func changeScene(file):
 
 	
 func _on_main_btn_pressed() -> void:
-	Global.transicion_fundido(1,func(): changeScene("res://scenes/main.tscn"))
+	changeScene("res://scenes/main.tscn")

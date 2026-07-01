@@ -1,3 +1,4 @@
+## Habilidad de curación: restaura HP al usuario según el valor de poder.
 class_name HealSkill extends Skill
 
 func ejecutar(usuario: Entity, objetivo: Entity) -> String:

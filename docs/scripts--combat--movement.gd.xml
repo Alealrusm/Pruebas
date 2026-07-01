@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="&quot;scripts/combat/movement.gd&quot;" inherits="CharacterBody2D" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		NPC con IA de persecución: detecta al jugador en rango, lo sigue y al contacto inicia combate.
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="_ready">
+			<return type="void" />
+			<description>
+				Configura colisiones, busca nodos del padre (dialog, sprite) y activa la IA.
+			</description>
+		</method>
+		<method name="_physics_process">
+			<return type="void" />
+			<param index="0" name="_delta" type="float" />
+			<description>
+				Mueve el NPC hacia el jugador si está en rango; si no, se queda quieto.
+			</description>
+		</method>
+		<method name="_configurar_deteccion_ia">
+			<return type="void" />
+			<description>
+				Crea un Area2D circular que detecta al Player para iniciar la persecución.
+			</description>
+		</method>
+		<method name="_configurar_contacto_fisico">
+			<return type="void" />
+			<description>
+				Crea un Area2D de contacto que dispara el encuentro al tocar al jugador.
+			</description>
+		</method>
+		<method name="_procesar_encuentro">
+			<return type="void" />
+			<description>
+				Muestra el diálogo y luego inicia el combate al cerrarlo.
+			</description>
+		</method>
+		<method name="_iniciar_combate">
+			<return type="void" />
+			<description>
+				Carga combat.tscn en un CanvasLayer sobre el mapa y pausa el mundo.
+			</description>
+		</method>
+	</methods>
+	<members>
+		<member name="Name" type="String" setter="" getter="" default="&quot;Control&quot;">
+		</member>
+		<member name="Text" type="String" setter="" getter="" default="&quot;¡Te sabes el rap de la ciberseguridad?&quot;">
+		</member>
+		<member name="es_jefe_combate" type="bool" setter="" getter="" default="false">
+		</member>
+		<member name="enemigo_id" type="String" setter="" getter="" default="&quot;control&quot;">
+		</member>
+		<member name="velocidad_persecucion" type="float" setter="" getter="" default="75.0">
+		</member>
+		<member name="rango_deteccion" type="float" setter="" getter="" default="180.0">
+		</member>
+		<member name="dialog" type="Dialog" setter="" getter="">
+		</member>
+		<member name="anim" type="AnimatedSprite2D" setter="" getter="">
+		</member>
+		<member name="jugador_objetivo" type="Player" setter="" getter="" default="null">
+		</member>
+		<member name="combate_iniciado" type="bool" setter="" getter="" default="false">
+		</member>
+	</members>
+</class>

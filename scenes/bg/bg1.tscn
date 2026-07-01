@@ -38,7 +38,6 @@ colorF = Color(0.5619763, 0.0011386774, 0.7063459, 1)
 time = 2.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=352412122]
-layer = -1
 
 [node name="blackborder" type="ColorRect" parent="CanvasLayer" unique_id=377155601]
 anchors_preset = 15

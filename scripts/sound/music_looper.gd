@@ -2,21 +2,14 @@ extends Node
 @export var loopStart : AudioStreamWAV
 @export var loop : AudioStreamWAV
 @export var thereIsStart : bool
-@export var musicID : int = 0
-@onready var loopN : AudioStreamPlayer = $Loop
-@onready var loopstartN : AudioStreamPlayer = $LoopStart
-
-func play() -> void:
-	loopN.stream = loop
+## Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	$Loop.stream = loop
 	if thereIsStart:
-		loopstartN.stream = loopStart
-		loopstartN.play()
+		$LoopStart.stream = loopStart
+		$LoopStart.play()
 	else:
-		loopN.play()
+		$Loop.play()
 
 func _on_loop_start_finished() -> void:
-	loopN.play()
-
-func stop():
-	loopN.stop()
-	loopstartN.stop()
+	$Loop.play()

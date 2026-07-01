@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="&quot;scenes/habilidades.gd&quot;" inherits="Control" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="_ready">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="_on_btn_especial_pressed">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="_on_btn_defensa_pressed">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="_on_btn_curar_pressed">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="_toggle">
+			<return type="void" />
+			<param index="0" name="indice" type="int" />
+			<param index="1" name="boton" type="Button" />
+			<description>
+			</description>
+		</method>
+		<method name="_actualizar_ui">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="_on_confirmar_pressed">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="_on_salir_pressed">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+	</methods>
+	<members>
+		<member name="btn_especial" type="Button" setter="" getter="" default="&lt;unknown&gt;">
+		</member>
+		<member name="btn_defensa" type="Button" setter="" getter="" default="&lt;unknown&gt;">
+		</member>
+		<member name="btn_curar" type="Button" setter="" getter="" default="&lt;unknown&gt;">
+		</member>
+		<member name="label_seleccion" type="Label" setter="" getter="" default="&lt;unknown&gt;">
+		</member>
+		<member name="btn_confirmar" type="Button" setter="" getter="" default="&lt;unknown&gt;">
+		</member>
+		<member name="btn_salir" type="Button" setter="" getter="" default="&lt;unknown&gt;">
+		</member>
+		<member name="indices_seleccionados" type="Array" setter="" getter="" default="[]">
+			Usamos índices en vez de referencias a objetos
+		</member>
+	</members>
+	<constants>
+		<constant name="MAX_ELEGIDAS" value="2">
+		</constant>
+	</constants>
+</class>

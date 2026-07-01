@@ -1,3 +1,4 @@
+## Habilidad de ataque: calcula daño (ataque + poder) y lo aplica al objetivo.
 class_name AttackSkill extends Skill
 
 func ejecutar(usuario: Entity, objetivo: Entity) -> String:

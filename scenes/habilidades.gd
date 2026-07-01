@@ -7,12 +7,12 @@ extends Control
 @onready var btn_confirmar: Button = $CenterContainer/Scale/BtnConfirmar
 @onready var btn_salir: Button = $CenterContainer/Scale/BtnSalir
 
-# Usamos índices en vez de referencias a objetos
+## Usamos índices en vez de referencias a objetos
 var indices_seleccionados: Array = []
 const MAX_ELEGIDAS = 2
 
 func _ready() -> void:
-	# Restaurar selección previa por índice
+	## Restaurar selección previa por índice
 	indices_seleccionados = []
 	for hab in Global.habilidades_elegidas:
 		var idx = Global.habilidades_disponibles.find(hab)

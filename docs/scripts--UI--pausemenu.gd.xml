@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="&quot;scripts/UI/pausemenu.gd&quot;" inherits="UI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="ready">
+			<return type="void" />
+			<description>
+				Called when the node enters the scene tree for the first time.
+			</description>
+		</method>
+		<method name="_input">
+			<return type="void" />
+			<param index="0" name="event" type="InputEvent" />
+			<description>
+			</description>
+		</method>
+		<method name="on_show">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="_on_continue">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="_on_habilidades_btn_pressed">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="_on_exit_btn_pressed">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="changeScene">
+			<return type="void" />
+			<param index="0" name="file" type="Variant" />
+			<description>
+			</description>
+		</method>
+		<method name="_on_main_btn_pressed">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+	</methods>
+	<members>
+		<member name="scaler" type="Control" setter="" getter="" default="&lt;unknown&gt;">
+		</member>
+	</members>
+</class>

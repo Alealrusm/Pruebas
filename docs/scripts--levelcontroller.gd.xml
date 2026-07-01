@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="&quot;scripts/levelcontroller.gd&quot;" inherits="Node2D" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		Generador procedural de laberintos: crea la grilla lógica, talla el maze y lo renderiza en un TileMap.
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="_ready">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+		<method name="generate_logic_grid">
+			<return type="void" />
+			<description>
+				1. Inicializa la matriz bidimensional llena de paredes.
+			</description>
+		</method>
+		<method name="carve_maze">
+			<return type="void" />
+			<description>
+				2. Algoritmo Recursive Backtracker
+			</description>
+		</method>
+		<method name="force_entry_exit">
+			<return type="void" />
+			<description>
+				3. Forzar las aperturas del inicio y fin
+			</description>
+		</method>
+		<method name="render_to_tilemap">
+			<return type="void" />
+			<description>
+				4. Escalar y dibujar en el TileMap. Agregar enemigos items y salidas
+			</description>
+		</method>
+	</methods>
+	<members>
+		<member name="width" type="int" setter="" getter="" default="31">
+			El ancho lógico (Debe ser impar)
+		</member>
+		<member name="height" type="int" setter="" getter="" default="31">
+			El alto lógico (Debe ser impar)
+		</member>
+		<member name="path_thickness" type="int" setter="" getter="" default="10">
+			Grosor en tiles de los pasillos y las paredes
+		</member>
+		<member name="entry_point" type="Vector2i" setter="" getter="" default="Vector2i(1, 0)">
+		</member>
+		<member name="exit_point" type="Vector2i" setter="" getter="" default="Vector2i(29, 30)">
+		</member>
+		<member name="max_enemy_gen" type="int" setter="" getter="" default="15">
+		</member>
+		<member name="tile_border" type="int" setter="" getter="" default="16">
+		</member>
+		<member name="random_halls" type="bool" setter="" getter="" default="false">
+			Genera secciones anchas aleatoriamente
+		</member>
+		<member name="halls_x" type="bool" setter="" getter="" default="false">
+		</member>
+		<member name="halls_y" type="bool" setter="" getter="" default="false">
+		</member>
+		<member name="max_halls" type="int" setter="" getter="" default="4">
+		</member>
+		<member name="hall_prob" type="float" setter="" getter="" default="0.3">
+		</member>
+		<member name="tile_map" type="TileMapLayer" setter="" getter="" default="&lt;unknown&gt;">
+		</member>
+		<member name="player" type="Player" setter="" getter="" default="&lt;unknown&gt;">
+		</member>
+		<member name="maze_grid" type="Array" setter="" getter="" default="[]">
+		</member>
+		<member name="path_count" type="int" setter="" getter="" default="0">
+		</member>
+		<member name="summon_count" type="int" setter="" getter="" default="0">
+		</member>
+		<member name="hall_count" type="int" setter="" getter="" default="0">
+		</member>
+	</members>
+	<constants>
+		<constant name="WALL" value="0">
+			Constantes de la lógica
+		</constant>
+		<constant name="PATH" value="1">
+		</constant>
+		<constant name="LAYER_ID" value="0">
+			Configuración del TileMap (Ajusta estos valores según tu TileSet)
+		</constant>
+		<constant name="TILE_SOURCE_ID" value="0">
+		</constant>
+		<constant name="ATLAS_WALL" value="Vector2i(46, 8)">
+			Coordenada del tile de pared en el atlas
+		</constant>
+		<constant name="ATLAS_PATH" value="Vector2i(36, 35)">
+			Coordenada del tile de suelo en el atlas
+		</constant>
+	</constants>
+</class>

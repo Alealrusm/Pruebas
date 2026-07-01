@@ -18,8 +18,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-MusicLooper="*uid://b1f3qt724ym1d"
-Global="*uid://bvcudylcct4cy"
+Global="*uid://bvfyq03ny0nf3"
 
 [display]
 
@@ -137,6 +136,5 @@ Run={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
+renderer/rendering_method="mobile"
 environment/defaults/default_clear_color=Color(0.18000486, 0.18000486, 0.18000486, 1)

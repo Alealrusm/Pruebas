@@ -2,7 +2,7 @@
 extends Control
 class_name UI
 @abstract func ready()
-# Called when the node enters the scene tree for the first time.
+## Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for a : Control in find_child("Buttons").get_children():
 		if a.name != "continue_btn" || a.name != "btn_B":
@@ -24,6 +24,6 @@ func _play_pressed():
 func _play_deny():
 	$Sounds/Deny.play()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+## Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

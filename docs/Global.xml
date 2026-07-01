@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="Global" inherits="Node" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		Autoload global: almacena el estado compartido entre escenas (jugador, enemigo, combate, fase 2).
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="_ready">
+			<return type="void" />
+			<description>
+				Inicializa el jugador y las habilidades disponibles al arrancar el juego.
+			</description>
+		</method>
+	</methods>
+	<members>
+		<member name="enemigo_actual" type="String" setter="" getter="" default="&quot;&quot;">
+			ID del enemigo en base_datos_enemigos.
+		</member>
+		<member name="escena_origen" type="String" setter="" getter="" default="&quot;&quot;">
+			Ruta de la escena a la que volver al terminar combate.
+		</member>
+		<member name="jugador" type="Character" setter="" getter="">
+		</member>
+		<member name="habilidades_disponibles" type="Array" setter="" getter="" default="[]">
+		</member>
+		<member name="habilidades_elegidas" type="Array" setter="" getter="" default="[]">
+		</member>
+		<member name="abrir_pausa_al_volver" type="bool" setter="" getter="" default="false">
+		</member>
+		<member name="datos_fase2_pendiente" type="Dictionary" setter="" getter="" default="{}">
+			Datos de fase 2 pasados a transform.tscn.
+		</member>
+		<member name="fase2_activa" type="bool" setter="" getter="" default="false">
+			Indica a combat.tscn que debe cargar la fase 2.
+		</member>
+		<member name="vida_actual_jugador" type="int" setter="" getter="" default="-1">
+			HP del jugador persistido entre escenas de combate.
+		</member>
+		<member name="enemigo_a_eliminar" type="Node" setter="" getter="" default="null">
+			Referencia al NPC a borrar del mapa al ganar.
+		</member>
+		<member name="base_datos_enemigos" type="Variant" setter="" getter="" default="{...}">
+			Base de datos de todos los enemigos del juego, incluyendo sus stats, sprites y fase 2 si aplica.
+		</member>
+	</members>
+</class>

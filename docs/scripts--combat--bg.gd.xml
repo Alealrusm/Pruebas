@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<class name="&quot;scripts/combat/bg.gd&quot;" inherits="Node2D" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/godotengine/godot/master/doc/class.xsd">
+	<brief_description>
+		Fondo animado: hace un ciclo de interpolación de color entre colorI y colorF en bucle.
+	</brief_description>
+	<description>
+	</description>
+	<tutorials>
+	</tutorials>
+	<methods>
+		<method name="_ready">
+			<return type="void" />
+			<description>
+			</description>
+		</method>
+	</methods>
+	<members>
+		<member name="colorI" type="Color" setter="" getter="">
+		</member>
+		<member name="colorF" type="Color" setter="" getter="">
+		</member>
+		<member name="time" type="float" setter="" getter="">
+		</member>
+		<member name="bg" type="ColorRect" setter="" getter="" default="&lt;unknown&gt;">
+		</member>
+	</members>
+</class>

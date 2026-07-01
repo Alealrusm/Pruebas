@@ -12,7 +12,7 @@ var seccount = 0
 @onready var objName : Label = $CenterContainer/Scale/Name
 @onready var objText : Label = $CenterContainer/Scale/Text
 @onready var scaler : Control = $CenterContainer/Scale
-# Called when the node enters the scene tree for the first time.
+## Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	secperchar = 1/charpersec
 	close_box()
@@ -42,7 +42,7 @@ func _input(event: InputEvent) -> void:
 				else:
 					$Sounds/Deny.play()
 					close_box()
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+## Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if rolling:
 		seccount = seccount +  delta

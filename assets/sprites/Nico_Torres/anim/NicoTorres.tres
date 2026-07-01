@@ -1,0 +1,156 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bb4jadqrgu1fh"]
+
+[ext_resource type="Texture2D" uid="uid://brmnaow4dbhrr" path="res://assets/sprites/Nico_Torres/NicolasTorres_Fight_Global_200x200.png" id="1_um8e1"]
+[ext_resource type="Texture2D" uid="uid://ba20k5chuiwmk" path="res://assets/sprites/Nico_Torres/NicolasTorres_Map_Global_180x180.png" id="2_daeca"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0koe"]
+atlas = ExtResource("1_um8e1")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_530vw"]
+atlas = ExtResource("1_um8e1")
+region = Rect2(2400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8fy7"]
+atlas = ExtResource("1_um8e1")
+region = Rect2(2600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfwa0"]
+atlas = ExtResource("1_um8e1")
+region = Rect2(2800, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tth07"]
+atlas = ExtResource("1_um8e1")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04sai"]
+atlas = ExtResource("1_um8e1")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qn8o8"]
+atlas = ExtResource("1_um8e1")
+region = Rect2(2000, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_163v5"]
+atlas = ExtResource("1_um8e1")
+region = Rect2(2200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ew6w"]
+atlas = ExtResource("2_daeca")
+region = Rect2(0, 0, 180, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkmd0"]
+atlas = ExtResource("2_daeca")
+region = Rect2(180, 0, 180, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvi1q"]
+atlas = ExtResource("1_um8e1")
+region = Rect2(600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjr6h"]
+atlas = ExtResource("1_um8e1")
+region = Rect2(800, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xf6l"]
+atlas = ExtResource("1_um8e1")
+region = Rect2(1000, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5bqh"]
+atlas = ExtResource("1_um8e1")
+region = Rect2(1200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ai4qr"]
+atlas = ExtResource("1_um8e1")
+region = Rect2(1400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjcmd"]
+atlas = ExtResource("1_um8e1")
+region = Rect2(1600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tg5ot"]
+atlas = ExtResource("1_um8e1")
+region = Rect2(1800, 0, 200, 200)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0koe")
+}],
+"loop": 0,
+"name": &"attack_nico_phase1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_530vw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8fy7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfwa0")
+}],
+"loop": 0,
+"name": &"attack_nico_phase2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tth07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04sai")
+}],
+"loop": 0,
+"name": &"combat_iddle_phase1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qn8o8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_163v5")
+}],
+"loop": 0,
+"name": &"combat_iddle_phase2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ew6w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkmd0")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvi1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjr6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xf6l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5bqh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ai4qr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjcmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tg5ot")
+}],
+"loop": 0,
+"name": &"phase_change",
+"speed": 5.0
+}]

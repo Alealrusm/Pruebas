@@ -1,6 +1,31 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://1ixpr3v36278"]
 
 [ext_resource type="Texture2D" uid="uid://cjbnm1k5rull0" path="res://assets/sprites/Lizama/Lizama_Map_Front_64x64.png" id="1_nk0b4"]
+[ext_resource type="Texture2D" uid="uid://ugq1qy5l27h7" path="res://assets/sprites/Lizama/Lizama_Fight_Front_200x200.png" id="1_p2x7b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlnfo"]
+atlas = ExtResource("1_p2x7b")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mn25a"]
+atlas = ExtResource("1_p2x7b")
+region = Rect2(1600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gyh7"]
+atlas = ExtResource("1_p2x7b")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pygn3"]
+atlas = ExtResource("1_p2x7b")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s7ajc"]
+atlas = ExtResource("1_p2x7b")
+region = Rect2(1200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3h0j"]
+atlas = ExtResource("1_p2x7b")
+region = Rect2(1400, 0, 200, 200)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2x7b"]
 atlas = ExtResource("1_nk0b4")
@@ -14,8 +39,62 @@ region = Rect2(64, 0, 64, 64)
 atlas = ExtResource("1_nk0b4")
 region = Rect2(128, 0, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_76yf5"]
+atlas = ExtResource("1_p2x7b")
+region = Rect2(600, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_341lk"]
+atlas = ExtResource("1_p2x7b")
+region = Rect2(800, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8iy2o"]
+atlas = ExtResource("1_p2x7b")
+region = Rect2(1000, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sv143"]
+atlas = ExtResource("1_p2x7b")
+region = Rect2(1200, 0, 200, 200)
+
 [resource]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nlnfo")
+}],
+"loop": 0,
+"name": &"attack_lizama_phase1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mn25a")
+}],
+"loop": 0,
+"name": &"attack_lizama_phase2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gyh7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pygn3")
+}],
+"loop": 0,
+"name": &"combat_iddle_phase1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s7ajc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3h0j")
+}],
+"loop": 0,
+"name": &"combat_iddle_phase2",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p2x7b")
@@ -29,7 +108,24 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4lj4x")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76yf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_341lk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8iy2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sv143")
+}],
+"loop": 0,
+"name": &"phase_change",
 "speed": 5.0
 }]
